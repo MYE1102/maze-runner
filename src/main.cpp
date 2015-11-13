@@ -44,38 +44,36 @@ void update(sf::Sprite* tileArr, sf::Sprite& PacmanSprite, sf::Event event, int 
 	{
 		if (handleWallCollision(tileArr, PacmanSprite, counter))
 		{
-			PacmanSprite.move(0, 0);
+			PacmanSprite.setPosition(PacmanSprite.getPosition().x + 2, PacmanSprite.getPosition().y);
 		}
-		else
+		
 			PacmanSprite.move(-1, 0);
 	}
 	else if ((event.key.code == sf::Keyboard::Right))
 	{
 		if (handleWallCollision(tileArr, PacmanSprite, counter))
 		{
-			PacmanSprite.move(0, 0);
-
+			PacmanSprite.setPosition(PacmanSprite.getPosition().x - 2, PacmanSprite.getPosition().y);
 		}
-		else
+		
 			PacmanSprite.move(1, 0);
 	}
 	else if ((event.key.code == sf::Keyboard::Up))
 	{
 		if (handleWallCollision(tileArr, PacmanSprite, counter))
 		{
-			PacmanSprite.move(0, 0);
+			PacmanSprite.setPosition(PacmanSprite.getPosition().x, PacmanSprite.getPosition().y + 2);
 		}
-		else
+		
 			PacmanSprite.move(0, -1);
 	}
 	else if ((event.key.code == sf::Keyboard::Down))
 	{
 		if (handleWallCollision(tileArr, PacmanSprite, counter))
 		{
-			PacmanSprite.move(0, 0);
+			PacmanSprite.setPosition(PacmanSprite.getPosition().x, PacmanSprite.getPosition().y - 2);
 
 		}
-		else
 			PacmanSprite.move(0, 1);
 	}
 }
